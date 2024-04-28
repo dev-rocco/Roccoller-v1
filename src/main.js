@@ -1,6 +1,7 @@
-canvas = document.getElementById("scrollerCanvas");
-ctx = canvas.getContext("2d");
-textLocs = [window.innerWidth]; // Array to allow for multiple text on screen in future (seamless scrolling, no gap at end)
+// Main window
+let canvas = document.getElementById("scrollerCanvas");
+let ctx = canvas.getContext("2d");
+let textLocs = [window.innerWidth]; // Array to allow for multiple text on screen in future (seamless scrolling, no gap at end)
 
 function render()
 {
