@@ -1,0 +1,11 @@
+{
+    "text": "Welcome to Roccoller. Please edit the config file in the application folder to change this placeholder text. You can even change the colour, speed and size!",
+    "textColour": "#FFFF00",
+    "font": "32px Arial",
+    "bgColour": "#000000",
+    "margin": "8",
+    "speed": "100",
+    "alwaysOnTop": "1",
+    "width": "800",
+    "height": "48"
+}
