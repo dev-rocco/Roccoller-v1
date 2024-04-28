@@ -5,6 +5,7 @@ const fs = require("fs");
 const cfgPath = "./config.json";
 let cfgContent = JSON.parse(fs.readFileSync(cfgPath));
 
+// In main scope for access from IPC
 let mainWindow;
 
 const createWindow = () => {
@@ -14,11 +15,9 @@ const createWindow = () => {
     x: 0,
     y: 0,
     webPreferences: {
-        // devTools: false,
         nodeIntegration: true,
         contextIsolation: true,
         preload: path.join(__dirname, "preload.js"),
-        // additionalArguments: [fs.readFileSync(path.join(__dirname, "config.json"))]
     },
     frame: false,
     alwaysOnTop: parseInt(cfgContent.alwaysOnTop)
@@ -39,6 +38,7 @@ app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') app.quit();
 });
 
+// Handle renderer request for config.json
 ipcMain.on("cfgRequest", (event, args) => {
     mainWindow.webContents.send("cfgReturn", cfgContent);
 });
