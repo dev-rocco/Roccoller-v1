@@ -1,5 +1,5 @@
 # Roccoller
-The text scroller, made by Rocco.
+The fully customisable text scroller, made by Rocco.
 
 ## About
 Developed with Electron.
